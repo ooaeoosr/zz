@@ -24,19 +24,19 @@ public class Time_score {
     @JoinColumn(name = "users_id")
     private Users id;
 
-    public Time_score(int semester, float avg_score, int get_score, Users users_id) {
+    public Time_score(int semester, float avg_score, int get_score, Users id) {
         this.semester = semester;
         this.avg_score = avg_score;
         this.get_score = get_score;
-        this.id = users_id;
+        this.id = id;
     }
 
     public Users getUsers() {
         return id;
     }
 
-    public void setUsers(Users users) {
-        this.id = users;
+    public void setUsers(Users id) {
+        this.id = id;
     }
 
     public int getSemester() {

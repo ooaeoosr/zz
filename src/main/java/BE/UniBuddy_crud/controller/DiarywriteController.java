@@ -4,14 +4,17 @@ package BE.UniBuddy_crud.controller;
 import BE.UniBuddy_crud.domain.Diarywrite;
 import BE.UniBuddy_crud.domain.Users;
 import BE.UniBuddy_crud.dto.DiarywriteDto;
+import BE.UniBuddy_crud.dto.GoalDto;
 import BE.UniBuddy_crud.repository.DiarywriteRepository;
 import BE.UniBuddy_crud.service.AuthService;
 import BE.UniBuddy_crud.service.DiarywriteService;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Optional;
 
@@ -67,6 +70,7 @@ public String add(@PathVariable("id") Long id, @RequestBody DiarywriteDto diaryw
         e.printStackTrace();
     }
     diarywrite.setTerm(termDate);
+
 
     // 사용자 ID를 설정
     Users user = authService.findById(id); // 사용자 정보 가져오기

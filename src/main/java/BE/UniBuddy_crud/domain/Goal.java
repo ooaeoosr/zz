@@ -35,51 +35,43 @@ public class Goal {
     // 외래키 관계 설정, users_id 열이 users 엔티티의 id 열 참조
     private Users id; //users 엔티티와의 관계를 나타냄, 사용자와 목표 연결
 
-    public Goal(int goal_num, LocalDate month, String goal_content, Users users_id) {
+    public Goal(int goal_num, LocalDate month, String goal_content, Users id) {
         this.goal_num = goal_num;
         this.month = month;
         this.goal_content = goal_content;
-        this.id = users_id;
+        this.id = id;
     }
 
     public Users getId() {
         return id;
     }
-
-    public void setId(Users id) {
-        this.id = id;
-    }
-
     public int getGoal_num() {
         return goal_num;
     }
-
-    public void setGoal_num(int goal_num) {
-        this.goal_num = goal_num;
-    }
-
     public String getGoal_content() {
         return goal_content;
     }
-
-    public void setGoal_content(String goal_content) {
-        this.goal_content = goal_content;
-    }
-
-
     public LocalDate getMonth() {
         return month;
     }
-
-    public void setMonth(LocalDate month) {
-        this.month = month;
-    }
-
     public Users getUsers_id() {
         return id;
     }
 
-    public void setUsers_id(Users users_id) {
-        this.id = users_id;
+
+    public void setId(Users id) {
+        this.id = id;
+    }
+    public void setGoal_num(int goal_num) {
+        this.goal_num = goal_num;
+    }
+    public void setGoal_content(String goal_content) {
+        this.goal_content = goal_content;
+    }
+    public void setMonth(LocalDate month) {
+        this.month = month;
+    }
+    public void setUsers_id(Users id) {
+        this.id = id;
     }
 }

@@ -80,6 +80,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -96,24 +97,72 @@ public class Diarywrite {
 
     private String act_name;
     private String title;
+
     private Date term;
+
     private String agency_name;
     private String content;
 
     @ManyToOne
     @JoinColumn(name = "users_id")
-    private Users users;
+    private Users id;
 
-    // 생성자를 직접 정의하지 않고 롬복의 @NoArgsConstructor(access = AccessLevel.PROTECTED)를 사용
-    // @Builder 어노테이션을 사용하여 객체를 생성
+    public int getAct_id() {
+        return act_id;
+    }
 
-    public static Diarywrite create(String act_name, String title, Date term, String agency_name, String content) {
-        Diarywrite diarywrite = new Diarywrite();
-        diarywrite.setAct_name(act_name);
-        diarywrite.setTitle(title);
-        diarywrite.setTerm(term);
-        diarywrite.setAgency_name(agency_name);
-        diarywrite.setContent(content);
-        return diarywrite;
+    public void setAct_id(int act_id) {
+        this.act_id = act_id;
+    }
+
+    public String getAct_name() {
+        return act_name;
+    }
+
+    public void setAct_name(String act_name) {
+        this.act_name = act_name;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Date getTerm() {
+        return term;
+    }
+
+    public void setTerm(Date term) {
+        this.term = term;
+    }
+
+    public String getAgency_name() {
+        return agency_name;
+    }
+
+    public void setAgency_name(String agency_name) {
+        this.agency_name = agency_name;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public Users getId() {
+        return id;
+    }
+
+    public void setId(Users id) {
+        this.id = id;
+    }
+
+    public void setUsers(Users user) {
     }
 }

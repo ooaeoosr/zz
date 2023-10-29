@@ -30,12 +30,12 @@ public class Calendar {
 
     private int month;
 
-    public Calendar(int cal_num, LocalDate day, int month, String add_content,Users users_id) {
+    public Calendar(int cal_num, LocalDate day, int month, String add_content,Users id) {
         this.cal_num = cal_num;
         this.day = day;
         this.month = month;
         this.add_content = add_content;
-        this.id = users_id;
+        this.id = id;
     }
 
 
