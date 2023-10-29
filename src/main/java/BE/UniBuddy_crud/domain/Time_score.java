@@ -4,8 +4,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Entity
@@ -13,28 +11,55 @@ import java.util.List;
 @Table(name = "time_score")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class Time_score {
+
     @Id
-    @GeneratedValue
     @Column(nullable = false)
     private int semester;
 
-    @Column
     private float avg_score;
 
-    @Column
     private int get_score;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
-    private Users users;
+    @JoinColumn(name = "users_id")
+    private Users id;
 
-    @OneToMany(mappedBy = "time_score")
-    private List<Time_subject> TimesubjectList = new ArrayList<>();
-
-
-    public Time_score(int semester, float avg_score, int get_score) {
+    public Time_score(int semester, float avg_score, int get_score, Users users_id) {
         this.semester = semester;
         this.avg_score = avg_score;
+        this.get_score = get_score;
+        this.id = users_id;
+    }
+
+    public Users getUsers() {
+        return id;
+    }
+
+    public void setUsers(Users users) {
+        this.id = users;
+    }
+
+    public int getSemester() {
+        return semester;
+    }
+
+    public void setSemester(int semester) {
+        this.semester = semester;
+    }
+
+    public float getAvg_score() {
+        return avg_score;
+    }
+
+    public void setAvg_score(float avg_score) {
+        this.avg_score = avg_score;
+    }
+
+    public int getGet_score() {
+        return get_score;
+    }
+
+    public void setGet_score(int get_score) {
         this.get_score = get_score;
     }
 }
