@@ -7,13 +7,15 @@ import BE.UniBuddy_crud.repository.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @RequiredArgsConstructor
 @Service
 public class DiarywriteService {
 
     private final DiarywriteRepository diarywriteRepository;
 
-    public Diarywrite 작성(Diarywrite diarywrite) {
+    public Diarywrite write(Diarywrite diarywrite) {
         //회원가입 진행
         Diarywrite diarywriteEntity = diarywriteRepository.save(diarywrite);
         return diarywriteEntity;

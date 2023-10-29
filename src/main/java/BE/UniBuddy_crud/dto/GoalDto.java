@@ -53,8 +53,8 @@ public class GoalDto {
         return users_id;
     }
 
-    public void setUsers_id(Users users_id) {
-        this.users_id = users_id;
+    public void setUsers_id(Users id) {
+        this.users_id = id;
     }
 
 }

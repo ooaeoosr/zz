@@ -38,20 +38,18 @@ package BE.UniBuddy_crud.service;
 
 import BE.UniBuddy_crud.domain.Users;
 import BE.UniBuddy_crud.repository.UsersRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor
 @Service
 public class AuthService {
 
+    private final UsersRepository usersRepository;
 
-    private UsersRepository usersRepository = null;
-
-    public AuthService(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
-    }
-
-    public AuthService() {
-    }
+//    public AuthService(UsersRepository usersRepository) {
+//        this.usersRepository = usersRepository;
+//    }
 
     public Users register(Users users) {
         Users userEntity = usersRepository.save(users);

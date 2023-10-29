@@ -165,4 +165,6 @@ public class Diarywrite {
 
     public void setUsers(Users user) {
     }
+
+
 }
